@@ -19,6 +19,7 @@ import { CommonModule } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { GetallbooksComponent } from './components/getallbooks/getallbooks.component';
 import { MatSelectModule } from '@angular/material/select';
+import { BookdetailsComponent } from './components/bookdetails/bookdetails.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MatSelectModule } from '@angular/material/select';
     LoginComponent,
     ForgotpasswordComponent,
     GetallbooksComponent,
+    BookdetailsComponent
   ],
   imports: [
     BrowserModule,
