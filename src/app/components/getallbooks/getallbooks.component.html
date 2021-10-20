@@ -1,0 +1,41 @@
+<div class="container">
+    <div fxLayout="row" fxLayoutAlign="start start">
+        <div fxLayoutAlign="space-evenly">
+            <h1>Books </h1>
+            <p style="color: grey;">({{bookscount}} items)</p>
+        </div>
+        <div fxLayoutAlign="end" fxFlex>
+            <form class="filterform">
+                <mat-form-field appearance="outline">
+                    <mat-select [(value)]="selectedValue">
+                        <mat-option *ngFor="let element of box" [value]="element.value">
+                            {{element.value}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </form>
+        </div>
+    </div>
+    <div class="cardcontainer">
+        <mat-card class="card" *ngFor="let book of books">
+            <mat-card-header class="image" fxLayout="column" fxLayoutAlign="center center">
+                <img class="bookimage" mat-card-image src="../../../assets/Images/Image 10.png">
+            </mat-card-header>
+            <mat-card-content class="cardContent" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="3px">
+                <p class="title">{{book.description}}</p>
+                <p class="author">by {{book.author}}</p>
+                <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+                    <div class="rating">
+                        <p class="ratingno">4.5</p>
+                        <img class="star" src="../assets\star.svg" alt="">
+                    </div>
+                    <p class="reviewno">(20)</p>
+                </div>
+                <p class="price" *ngIf="book.discountPrice==0">Rs. {{book.price}}</p>
+                <p class="price" *ngIf="book.discountPrice>0">Rs. {{book.price-book.discountPrice}}</p>
+                <p class="pricestrike" *ngIf="book.discountPrice>0"><del>Rs. {{book.price}}</del></p>
+            </mat-card-content>
+            <mat-card-actions></mat-card-actions>
+        </mat-card>
+    </div>
+</div>

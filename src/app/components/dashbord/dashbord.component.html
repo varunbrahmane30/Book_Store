@@ -1,1 +1,27 @@
-<p>dashbord works!</p>
+<div fxFlex>
+    <mat-toolbar color="primary" class="toolbar" fxLayout="row" fxLayoutAlign="space-between center">
+        <img src="../../../assets/Images/education.svg" style="margin-right: 5px; margin-left: 100px;">
+        <span style="margin-right: 60px;">Bookstore</span>
+        <form class="example-form" style="margin-right: 600px;">
+            <input type="text" class="search-box" placeholder="Search...">
+        </form>
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="header-button">
+            <img src="../../../assets/Images/person.svg">
+            <div style="color: white">Profile</div>
+            <mat-menu class="menuitem" #menu="matMenu">
+                <h3>Welcome</h3>
+                <p>To acsess account and manage orders</p>
+                <a href="http://localhost:4200/login"><input type="submit" class="loginbtn" name="LOGIN/SIGNUP"
+                        value="LOGIN/SIGNUP"></a>
+                <hr style="width: 200px;margin-top: -5px;">
+                <a href=""><img src="../../../assets/Images/shopping_cart.svg">My Orders</a><br>
+                <a href=""> <img src="../../../assets/Images/shopping_cart.svg">Wishlist</a>
+            </mat-menu>
+        </button>
+        <button mat-icon-button class="header-button">
+            <img src="../../../assets/Images/shopping_cart.svg">
+            <div style="color: white">Cart</div>
+        </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+</div>

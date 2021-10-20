@@ -1,0 +1,45 @@
+.toolbar {
+  background-color: #a03037;
+  //   flex: 1 1 auto;
+}
+.example-form {
+  width: 150px;
+  max-height: 30px;
+}
+
+.menuitem {
+  height: 100px;
+  width: 80px;
+}
+h3 {
+  padding: 20px;
+}
+p {
+  margin-top: -50px;
+  padding: 20px;
+  text-align: justify;
+  font-size: 12px;
+}
+
+.loginbtn {
+  margin: 20px;
+  margin-top: -50px;
+  padding: 10px;
+  border: 1px solid #a03037;
+  border-radius: 2px;
+  opacity: 1;
+  background-color: white;
+}
+.header-button {
+  background-color: transparent;
+  height: 100%;
+  width: 90px;
+  border: #a03037;
+}
+
+.search-box {
+  height: 30px;
+  width: 500px;
+  background-color: white;
+  color: black;
+}

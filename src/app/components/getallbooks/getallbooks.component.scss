@@ -1,0 +1,107 @@
+.container {
+  margin: 70px 100px;
+}
+
+.bookimage {
+  width: 105px;
+  height: 135px;
+  background: transparent 0% 0% no-repeat padding-box;
+  opacity: 1;
+  margin: 20px;
+}
+
+::ng-deep {
+  .card.mat-card {
+    width: 235px;
+    height: auto;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    opacity: 1;
+    padding: 0px;
+    margin: 26px;
+  }
+}
+
+.image {
+  height: 172px;
+  background: #f5f5f5 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.title {
+  font: normal normal normal 14px Roboto;
+  letter-spacing: 0px;
+  color: #0a0102;
+  opacity: 1;
+  margin: 0px;
+}
+
+.author {
+  font: normal normal normal 10px/13px Roboto;
+  letter-spacing: 0px;
+  color: #878787;
+  opacity: 1;
+  margin: 0px;
+}
+
+.rating {
+  width: fit-content;
+  background: #388e3c 0% 0% no-repeat padding-box;
+  border-radius: 1px;
+  opacity: 1;
+  padding: 0px 3px;
+  margin: 0px;
+}
+.ratingno {
+  display: inline;
+  width: 14px;
+  height: 13px;
+  text-align: left;
+  font: normal normal bold 10px/13px Roboto;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.star {
+  width: 8px;
+  height: 7px;
+  opacity: 1;
+  margin: 0px;
+}
+
+.reviewno {
+  width: 18px;
+  height: 13px;
+  text-align: left;
+  font: normal normal normal 10px/13px Roboto;
+  letter-spacing: 0px;
+  color: #878787;
+  opacity: 1;
+  margin: 0px;
+}
+
+.price {
+  width: 48px;
+  height: 16px;
+  font: normal normal bold 12px/16px Roboto;
+  letter-spacing: 0px;
+  color: #0a0102;
+  opacity: 1;
+}
+
+.pricestrike {
+  height: 13px;
+  text-decoration: line-through;
+  font: normal normal normal 10px/13px Roboto;
+  letter-spacing: 0px;
+  color: #878787;
+  opacity: 1;
+}
+
+.cardContent {
+  margin: 10px;
+}
+.cardcontainer {
+  display: flex;
+  background-size: cover;
+}

@@ -1,0 +1,77 @@
+<div class="body">
+    <mat-grid-list cols="2">
+        <mat-grid-tile>
+            <mat-card class="imagecard">
+                <img src="../../../assets/Images/2766594.png" class="image">
+                <div>
+                    <h1 class="title"> ONLINE BOOK SHOPPING</h1>
+                </div>
+            </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-card class="login-card">
+                <mat-card-title style="margin-left: 20px; margin-top: 20px; flex: 1 1 auto;">
+                    <span (click)="toggleLogin(true)">Login
+                        <!-- <div style="height: 5px; width: 10px; background-color: #a03037;">
+                </div> -->
+                    </span>
+                    <span (click)="toggleLogin(false)" style="float: right; padding-right: 15px;">Signup</span>
+                </mat-card-title>
+
+                <div *ngIf="login; else signup">
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmitform()" style="margin: 25px;">
+
+                        <div>Email Id</div><input matInput formControlName="email" type="email"
+                            style="width: 100%; height: 20px; margin-bottom: 10px">
+                        <mat-hint style="color: red;" *ngIf="f.email.invalid && f.email.touched">
+                            Email is required
+                        </mat-hint>
+
+                        <div>Password</div><input matInput type="password" formControlName="password"
+                            style="width: 100%; height: 20px;">
+                        <mat-hint style="color: red;" *ngIf="f.password.invalid && f.password.touched">
+                            password is required
+                        </mat-hint>
+
+                        <a href="#" style="float: right;">Forgot password?</a>
+
+                        <input type="submit" name="Login" value="Login" (click)="onSubmitform()"
+                            style="width: 101%; height: 30px; background-color: #a03037; color: white; margin-top: 30px">
+                    </form>
+                </div>
+
+                <ng-template #signup>
+                    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                        <div>Full Name</div><input matInput type="text" formControlName="fullname"
+                            style="width: 100%; height: 20px; margin-bottom: 10px">
+                        <mat-hint style="color: red;" *ngIf="g.fullname.invalid && g.fullname.touched">
+                            Fullname is required
+                        </mat-hint>
+
+                        <div>Email Id</div><input matInput type="email" formControlName="email"
+                            style="width: 100%; height: 20px; margin-bottom: 10px">
+                        <mat-hint style="color: red;" *ngIf="g.email.invalid && g.email.touched">
+                            Email is required
+                        </mat-hint>
+
+                        <div>Password</div><input matInput type="password" formControlName="password"
+                            style="width: 100%; height: 20px; margin-bottom: 10px">
+                        <mat-hint style="color: red;" *ngIf="g.password.invalid && g.password.touched">
+                            password is required
+                        </mat-hint>
+
+                        <div>Mobile Number</div><input type="tel" formControlName="mobileno"
+                            style="width: 100%; height: 20px;">
+                        <mat-hint style="color: red;" *ngIf="g.mobileno.invalid && g.mobileno.touched">
+                            Mobile Number is required
+                        </mat-hint>
+
+                        <input type="submit" name="Signup" value="Signup" (click)="onSubmit()"
+                            style="width: 101%; height: 30px; background-color: #a03037; color: white; margin-top: 30px">
+                    </form>
+                </ng-template>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+</div>
