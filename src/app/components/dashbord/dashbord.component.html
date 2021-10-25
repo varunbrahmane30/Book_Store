@@ -2,7 +2,7 @@
     <mat-toolbar color="primary" class="toolbar" fxLayout="row" fxLayoutAlign="space-between center">
         <img src="../../../assets/Images/education.svg" style="margin-right: 5px; margin-left: 100px;">
         <span style="margin-right: 60px;">Bookstore</span>
-        <form class="example-form" style="margin-right: 600px;">
+        <form class="example-form" fxHide.lt-sm style="margin-right: 600px;">
             <input type="text" class="search-box" placeholder="Search...">
         </form>
         <button mat-icon-button [matMenuTriggerFor]="menu" class="header-button">
@@ -14,11 +14,12 @@
                 <a href="http://localhost:4200/login"><input type="submit" class="loginbtn" name="LOGIN/SIGNUP"
                         value="LOGIN/SIGNUP"></a>
                 <hr style="width: 200px;margin-top: -5px;">
-                <a href=""><img src="../../../assets/Images/shopping_cart.svg">My Orders</a><br>
-                <a href=""> <img src="../../../assets/Images/shopping_cart.svg">Wishlist</a>
+
+                <span (click)="myOrders()"><img src="../../../assets/Images/shopping_cart.svg">My Orders</span><br>
+                <span (click)="wishlist()"> <img src="../../../assets/Images/shopping_cart.svg">Wishlist</span>
             </mat-menu>
         </button>
-        <button mat-icon-button class="header-button">
+        <button (click)="cartbtn()" mat-icon-button class="header-button">
             <img src="../../../assets/Images/shopping_cart.svg">
             <div style="color: white">Cart</div>
         </button>
