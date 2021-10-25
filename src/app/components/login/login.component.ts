@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserserviceService } from 'src/app/service/userservice/userservice.service';
 
 @Component({
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
   signupForm: any = FormGroup;
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserserviceService
+    private userService: UserserviceService,
+    private route: Router
   ) {}
 
   ngOnInit() {
@@ -51,7 +53,7 @@ export class LoginComponent implements OnInit {
 
       console.log(this.signupForm.value);
 
-      this.userService.registerUser(reqPayload).subscribe(
+      this.userService.registerservice(reqPayload).subscribe(
         (res) => {
           console.log(res);
           //   this.showSnackbar(res);
@@ -75,17 +77,34 @@ export class LoginComponent implements OnInit {
 
       console.log(this.loginForm.value);
 
-      this.userService.loginUserService(reqPayload).subscribe(
-        (res) => {
-          console.log(res);
-          //   this.showSnackbar(res);
+      this.userService.loginservice(reqPayload).subscribe(
+        (response: any) => {
+          console.log(response),
+            localStorage.setItem('token', response.result.accessToken),
+            // this.snackbar.open(response.message, "close", {
+            // duration: 1500,
+
+            this.route.navigateByUrl('/home/books');
         },
-        (err: any) => {
-          console.log(err);
+        (error: any) => {
+          console.log(error);
+          // this.snackbar.open(error.error.message, "close", {
+          //   duration: 1500,
         }
       );
     }
   }
+  // this.userService.loginUserService(reqPayload).subscribe(
+  //   (res) => {
+  //     console.log(res);
+  //     //   this.showSnackbar(res);
+  //   },
+  //   (err: any) => {
+  //     console.log(err);
+  //   }
+  // );
+  //   }
+  // }
 
   toggleLogin(login: boolean) {
     this.login = login;
