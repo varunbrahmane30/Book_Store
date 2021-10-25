@@ -20,6 +20,24 @@ export class BookstoreService {
     });
     return this.http.GetService(
       this.BACKEND_BASE_URL + '/bookstore_user/get/book',
+      true,
+      header
+    );
+  }
+
+  getwishlist() {
+    this.token = localStorage.getItem('token');
+
+    let header = {
+      headers: new HttpHeaders({
+        'x-access-token': this.token,
+        'Content-Type': 'application/json',
+      }),
+    };
+
+    return this.http.GetService(
+      this.BACKEND_BASE_URL + '/bookstore_user/get_wishlist_items',
+      true,
       header
     );
   }
