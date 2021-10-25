@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="navigator">
+        <p class="head0">Home /</p>
+        <p class="head1">Book(01)</p>
+    </div>
+    <div class="cart">
+        <mat-card style="background-color: #F5F5F5;">
+            <mat-card-title>
+                My Orders ({{ordersCount}})
+            </mat-card-title>
+        </mat-card>
+    </div>
+    <div class="cart" *ngFor="let book of orders">
+        <mat-card>
+            <div style="display: flex;">
+                <div class="header">
+                    <div class="imagebody">
+                        <img style="height: 90px;width: 60px;" src="../../../assets/Images/Image 11.png" alt="">
+                    </div>
+                    <div>
+                        <h1>{{book.product_id.bookname}}</h1>
+                        <p>{{book.product_id.author}}</p>
+                        <div style="display: flex;">
+                            <div>
+                                <h2>Rs. {{ book.product_id.discountPrice}}</h2>
+                            </div>
+                            <div class="actualprice">
+                                <p>Rs. {{book.product_id.price}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </mat-card>
+
+    </div>
+</div>
