@@ -1,0 +1,225 @@
+.container {
+  margin-top: 50px;
+}
+
+.book {
+  width: 282px;
+  height: 364px;
+  background: transparent 0% 0% no-repeat padding-box;
+  opacity: 1;
+  padding: 40px 35px;
+  border: 1px solid #d1d1d1;
+  border-radius: 2px;
+  opacity: 1;
+}
+
+.addtobagbutton {
+  width: 170px;
+  height: 40px;
+  background: #a03037 0% 0% no-repeat padding-box;
+  border-radius: 2px;
+  opacity: 1;
+  color: white;
+}
+
+.wishlistbutton {
+  width: 170px;
+  height: 40px;
+  background: #333333 0% 0% no-repeat padding-box;
+  border-radius: 2px;
+  opacity: 1;
+  color: white;
+}
+
+.bookname {
+  width: 259px;
+  height: 37px;
+  text-align: left;
+  font: normal normal normal 28px/37px Roboto;
+  letter-spacing: 0px;
+  color: #0a0102;
+  opacity: 1;
+}
+
+.author {
+  width: 114px;
+  height: 24px;
+  text-align: left;
+  font: normal normal normal 18px/24px Roboto;
+  letter-spacing: 0px;
+  color: #878787;
+  opacity: 1;
+}
+
+.ratingbox {
+  background: #388e3c 0% 0% no-repeat padding-box;
+  border-radius: 1px;
+  opacity: 1;
+  padding: 3px 8px;
+  width: 40px;
+}
+
+.rating {
+  width: 20px;
+  height: 19px;
+  font: normal normal bold 14px/19px Roboto;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+  display: inline;
+}
+
+.star {
+  width: 15px;
+  height: 15px;
+  opacity: 1;
+  margin-left: 5px;
+}
+
+.ratingno {
+  width: 27px;
+  height: 20px;
+  font: normal normal normal 15px/20px Roboto;
+  letter-spacing: 0px;
+  color: #878787;
+  opacity: 1;
+  margin-top: 15px;
+}
+
+.actualprice {
+  font-weight: 600;
+  font-size: 30px;
+  letter-spacing: 0px;
+  color: #0a0102;
+  opacity: 1;
+}
+
+.discountPrice {
+  font: normal normal normal 15px/20px Roboto;
+  letter-spacing: 0px;
+  color: #878787;
+  opacity: 1;
+}
+
+.bookdetails {
+  width: 76px;
+  height: 20px;
+  text-align: left;
+  font: normal normal normal 15px/20px Roboto;
+  letter-spacing: 0px;
+  color: #878787;
+  opacity: 1;
+}
+
+ul.list {
+  padding: 0px 0px 0px 15px;
+  margin-bottom: 3px;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.feedbackhead {
+  height: 24px;
+  font: normal normal normal 18px/24px Roboto;
+  letter-spacing: 0px;
+  color: #0a0102;
+  opacity: 1;
+}
+
+.reviewbox {
+  max-width: fit-content;
+  height: 192px;
+  background: #f5f5f5 0% 0% no-repeat padding-box;
+  border-radius: 2px;
+  padding: 18px;
+}
+
+.ratinghead {
+  height: 16px;
+  text-align: left;
+  font: normal normal normal 12px/16px Roboto;
+  letter-spacing: 0px;
+  color: #0a0102;
+  opacity: 1;
+}
+
+.searchinput {
+  width: 40vw;
+  height: 63px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 3px;
+  opacity: 1;
+  outline: none;
+  border: none;
+  padding: 8px;
+}
+
+.reviewsubmit {
+  width: 76px;
+  height: 24px;
+  background: #3371b5 0% 0% no-repeat padding-box;
+  border-radius: 2px;
+  opacity: 1;
+  margin: 10px;
+
+  float: right;
+}
+
+.submitbotton {
+  width: 44px;
+  height: 19px;
+  text-align: center;
+  font: normal normal normal 14px/19px Roboto;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-transform: capitalize;
+  opacity: 1;
+  margin-bottom: 0px;
+}
+
+.bookimage {
+  display: flex;
+}
+
+.description {
+  padding-left: 40px;
+}
+
+.image {
+  height: 100px;
+  width: 100px;
+}
+
+.navigator {
+  display: flex;
+  margin: 30px;
+}
+
+.image1 {
+  height: 50px;
+  width: 70px;
+  display: flex;
+}
+
+.list {
+  // height: 100px;
+  // width: 100px;
+}
+
+.list-items {
+  border: 1px solid #e0e0e0;
+  border-bottom: none;
+  margin: 5px;
+  border: 2px solid #a03037;
+}
+
+.mat-list-base .mat-list-item,
+.mat-list-base .mat-list-option {
+  height: 48px;
+  -webkit-tap-highlight-color: transparent;
+  width: 64px;
+  padding: 0;
+  opacity: 1;
+}

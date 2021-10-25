@@ -1,1 +1,68 @@
-<p>bookdetails works!</p>
+<!-- <div fxFlex>
+    <p class="head0">Home/</p>
+    <p class="head1">Book(01)</p>
+</div> -->
+
+
+<div class="container" fxLayoutAlign="center center">
+    <!-- <div fxLayoutAlign="start start" style="vertical-align: top;display: block !important;" fxHide.lt-sm>
+        <mat-selection-list [multiple]="false" class="list">
+            <mat-list-option class="list-items">
+                <img class="image1" src="../../../assets/Images/Image 11.png">
+            </mat-list-option>
+            <mat-list-option class="list-items">
+                <img class="image1" src="../../../assets/Images/Image 12.png">
+            </mat-list-option>
+        </mat-selection-list>
+    </div> -->
+
+    <div class="bookimage" fxLayoutGap="50px" fxLayout.lt-sm="column">
+        <div fxLayoutGap="10px">
+            <img class="book" src="../../../assets/Images/Image 11.png">
+            <div style="margin: 20px;">
+                <button mat-flat-button type="submit" class="addtobagbutton" (click)=gotocart(data)>Add to bag</button>
+                <button mat-flat-button style="margin-left:12px;" type="submit" (click)=gotowishlist(data)
+                    class="wishlistbutton">Wishlist</button>
+            </div>
+        </div>
+
+        <div class="description" fxLayout.lt-sm="column">
+            <p class="bookname">{{data.bookName}}</p>
+            <p class="author">by {{data.author}}</p>
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
+                <div class="ratingbox">
+                    <p class="rating">4.5</p>
+                    <img class="star" src="../../../assets/Images/star_outline_black_24dp.svg" alt="">
+                </div>
+                <p class="ratingno">(20)</p>
+            </div>
+            <p class="actualprice" *ngIf="data.discountPrice==0">Rs. {{data.price}}</p>
+            <div fxLayout="row" fxLayoutGap="10px">
+                <p class="actualprice" *ngIf="data.discountPrice>0">Rs. {{data.discountPrice}}</p>
+                <p class="discountPrice" *ngIf="data.discountPrice>0"><del>Rs. {{data.price}}</del></p>
+            </div>
+            <hr>
+            <ul class="list">
+                <li class="bookdetails">Book Detail</li>
+            </ul>
+            <p class="description">{{data.description}}</p>
+            <hr>
+            <p class="feedbackhead">Customer Feedback</p>
+            <div class="reviewbox" fxLayout="column">
+                <p class="ratinghead">Overall rating</p>
+                <div fxLayout="row">
+                    <img class="star" src="../../../assets/Images/star_outline_black_24dp.svg" alt="">
+                    <img class="star" src="../../../assets/Images/star_outline_black_24dp.svg" alt="">
+                    <img class="star" src="../../../assets/Images/star_outline_black_24dp.svg" alt="">
+                    <img class="star" src="../../../assets/Images/star_outline_black_24dp.svg" alt="">
+                    <img class="star" src="../../../assets/Images/star_outline_black_24dp.svg" alt="">
+                </div>
+                <textarea placeholder="write your review" class="searchinput"
+                    [ngStyle.lt-md]="{'width.VW': 90}"></textarea>
+                <button class="reviewsubmit" color="primary">
+                    <p class="submitbotton">Submit</p>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
