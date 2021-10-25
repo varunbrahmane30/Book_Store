@@ -1,11 +1,11 @@
 <div class="container">
-    <div class="headerprop">
-        <div fxLayoutAlign="space-evenly" fxLayoutAlign="start start">
+    <div class="headerprop" fxLayoutAlign="space-between">
+        <div fxLayoutAlign="space-evenly" fxLayoutAlign="start end">
             <h1>Books </h1>
             <p style="color: grey;">({{bookscount}} items)</p>
         </div>
-        <div fxLayoutAlign="end end">
-            <form class="filterform">
+        <div fxLayoutAlign="start end">
+            <form class="filterform" fxLayoutAlign="space-evenly" fxLayoutAlign="start end">
                 <mat-form-field appearance="outline">
                     <mat-select [(value)]="selectedValue">
                         <mat-option *ngFor="let element of box" [value]="element.value">
@@ -16,26 +16,34 @@
             </form>
         </div>
     </div>
-    <div class="cardcontainer">
-        <mat-card class="card" *ngFor="let book of books">
+    <div class="cardcontainer" fxLayout="row" fxLayoutGap="20px" fxLayout.xs="column"
+        fxLayoutAlign.gt-xs="center center" fxLayoutAlign.lt-sm="center center">
+        <mat-card class="card" fxLayout.xs="column" *ngFor="let book of pageBooks" (click)="displayselected(book)">
             <mat-card-header class="image" fxLayout="column" fxLayoutAlign="center center">
-                <img class="bookimage" mat-card-image src="../../../assets/Images/Image 10.png">
+                <img class="bookimage" mat-card-image src="../../../assets/Images/Image 11.png">
             </mat-card-header>
             <mat-card-content class="cardContent" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="3px">
-                <p class="title">{{book.description}}</p>
+                <p class="title">{{book.bookName}}</p>
                 <p class="author">by {{book.author}}</p>
                 <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
                     <div class="rating">
                         <p class="ratingno">4.5</p>
-                        <img class="star" src="../assets\star.svg" alt="">
+                        <img class="star" src="../../../assets/Images/star_outline_black_24dp.svg" alt="">
                     </div>
                     <p class="reviewno">(20)</p>
                 </div>
                 <p class="price" *ngIf="book.discountPrice==0">Rs. {{book.price}}</p>
-                <p class="price" *ngIf="book.discountPrice>0">Rs. {{book.price-book.discountPrice}}</p>
+                <p class="price" *ngIf="book.discountPrice>0">Rs. {{book.discountPrice}}</p>
                 <p class="pricestrike" *ngIf="book.discountPrice>0"><del>Rs. {{book.price}}</del></p>
             </mat-card-content>
             <mat-card-actions></mat-card-actions>
         </mat-card>
+
+
+    </div>
+    <div class="mat-paginator-container">
+        <mat-paginator [length]="length" [pageIndex]="pageIndex" [pageSize]="pageSize" [pageSizeOptions]="[12, 50, 100]"
+            aria-label="Select page" (page)="handlePage($event)">
+        </mat-paginator>
     </div>
 </div>
