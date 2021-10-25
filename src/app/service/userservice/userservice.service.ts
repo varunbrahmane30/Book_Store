@@ -13,31 +13,59 @@ export class UserserviceService {
     this.token = localStorage.getItem('token');
     console.log(this.token);
   }
-  registerUser(reqData: any) {
-    let headers = {
+  // registerUser(reqData: any) {
+  //   let headers = {
+  //     headers: new HttpHeaders({
+  //       'content-Type': 'application/json',
+  //       Authorization: this.token,
+  //     }),
+  //   };
+  //   return this.httpService.PostService(
+  //     this.BACKEND_BASE_URL + '/bookstore_user/registration',
+  //     reqData,
+  //     headers
+  //   );
+  // }
+
+  // loginUserService(reqData: any) {
+  //   let headers = {
+  //     headers: new HttpHeaders({
+  //       'content-Type': 'application/json',
+  //       Authorization: this.token,
+  //     }),
+  //   };
+  //   return this.httpService.PostService(
+  //     this.BACKEND_BASE_URL + '/bookstore_user/login',
+  //     reqData,
+  //     headers
+  //   );
+  // }
+
+  registerservice(payload: any) {
+    let header = {
       headers: new HttpHeaders({
-        'content-Type': 'application/json',
-        Authorization: this.token,
+        'x-access-token': this.token,
+        'Content-Type': 'application/json',
       }),
     };
     return this.httpService.PostService(
       this.BACKEND_BASE_URL + '/bookstore_user/registration',
-      reqData,
-      headers
+      payload,
+      header
     );
   }
 
-  loginUserService(reqData: any) {
-    let headers = {
+  loginservice(payload: any) {
+    let header = {
       headers: new HttpHeaders({
-        'content-Type': 'application/json',
-        Authorization: this.token,
+        'x-access-token': this.token,
+        'Content-Type': 'application/json',
       }),
     };
     return this.httpService.PostService(
       this.BACKEND_BASE_URL + '/bookstore_user/login',
-      reqData,
-      headers
+      payload,
+      header
     );
   }
 }
