@@ -1,0 +1,43 @@
+.cantainer {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 10px;
+}
+
+th {
+  background-color: #dddddd;
+}
+
+.cont {
+  top: 641px;
+  left: 644px;
+  width: 160px;
+  height: 40px;
+  background-color: #24a0ed;
+  text-align: left;
+  font: normal normal medium 14px/17px Lato;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-transform: uppercase;
+  opacity: 1;
+  text-align: center;
+  border: gray;
+}
+img {
+  margin-left: 390px;
+}
