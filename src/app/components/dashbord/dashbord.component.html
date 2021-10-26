@@ -19,10 +19,15 @@
                 <span (click)="wishlist()"> <img src="../../../assets/Images/shopping_cart.svg">Wishlist</span>
             </mat-menu>
         </button>
-        <button (click)="cartbtn()" mat-icon-button class="header-button">
-            <img src="../../../assets/Images/shopping_cart.svg">
-            <div style="color: white">Cart</div>
+        <button (click)="cartbtn()" mat-icon-button matBadge="8" matBadgeColor="accent" class="header-button">
+            <img matBadge="8" src="../../../assets/Images/shopping_cart.svg">
+            <div matBadge="7" style="color: white">Cart</div>
         </button>
+
     </mat-toolbar>
     <router-outlet></router-outlet>
+    <div class="footer" fxLayoutAlign="center end" fxLayoutAlign.lt.sm="end end">
+        <p class="footercontent" fxLayoutAlign="center">Copyright © 2020, Bookstore Private
+            Limited. All Rights Reserved</p>
+    </div>
 </div>

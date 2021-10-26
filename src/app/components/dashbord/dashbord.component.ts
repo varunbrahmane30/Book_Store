@@ -6,9 +6,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashbord.component.scss'],
 })
 export class DashbordComponent implements OnInit {
+  cartArray: any;
+
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {}
 
   cartbtn() {
     this.router.navigateByUrl('home/cart');
