@@ -7,6 +7,7 @@ import { BookdetailsComponent } from './components/bookdetails/bookdetails.compo
 import { CartComponent } from './components/cart/cart.component';
 import { PlaceprderComponent } from './components/placeprder/placeprder.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { MyordersComponent } from './components/myorders/myorders.component';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -31,7 +32,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MyordersComponent } from './components/myorders/myorders.component';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
