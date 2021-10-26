@@ -1,92 +1,38 @@
 <div class="container" fxLayout.lt-sm="column" fxLayout="column" fxLayoutAlign="center center">
-    <div fxLayout="column" fxLayoutAlign="start start">
-        <div fxLayout="row">
-            <p>Home /</p>
-            <p>My Whishlist</p>
-        </div>
-
-        <mat-card class="item" class="card" fxLayout.lt-sm="column" ngStyle.It-lg="{'width.px': 0}">
-            <mat-card-header class="cardheader">
-                <mat-card-title class="cardtitle">My Wishlist ({{wishlistCount}})</mat-card-title>
-            </mat-card-header>
-            <mat-card-content class="cardcontent" *ngFor="let book of wishlist" fxLayout="row" fxLayoutGap="38px">
-                <div>
-                    <img class="book" style="height: 90px;width: 60px;" src="../../../assets/Images/Image 11.png"
-                        alt="">
-                </div>
-                <div>
-                    <div fxLayout.sm="row">
-                        <h1>{{book.product_id.bookname}}</h1>
-                        <p>{{book.product_id.author}}</p>
-                        <div style="display: flex;">
-                            <div>
-                                <h2>Rs. {{ book.product_id.discountPrice}}</h2>
-                            </div>
-                            <div class="actualprice">
-                                <p>Rs. {{book.product_id.price}}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div fxFlex fxLayoutAlign="end">
-                    <button (click)="remove(book)" class="delete" mat-icon-button>
-                        <img style="opacity: 0.5;" src="../../../assets/Images/delete_outline_black_24dp.svg" />
-                    </button>
-                </div>
-            </mat-card-content>
-        </mat-card>
-    </div>
-</div>
-
-<!-- <div class="container" fxLayout="column" fxLayoutAlign="center center">
-    <div fxLayout="column" fxLayoutAlign="start start">
-        <div fxLayout="row">
+    <!-- <div fxLayoutAlign="start start">
+        <div>
             <p class="head0">Home /</p>
             <p class="head1">Book(01)</p>
         </div>
-    </div>
-    <div class="cart">
-        <mat-card style="background-color: #F5F5F5;">
-            <mat-card-title>
-                My Wishlist ({{wishlistCount}})
-            </mat-card-title>
-        </mat-card>
-    </div> 
-    <mat-card>
+    </div> -->
+
+    <mat-card class="item" class="card" fxLayout.lt-sm="column">
         <mat-card-header class="cardheader">
             <mat-card-title class="cardtitle">My Wishlist ({{wishlistCount}})</mat-card-title>
         </mat-card-header>
-
-
-        <div class="cart" *ngFor="let book of wishlist">
-
-            <div style="display: flex;">
-                <div class="header">
-                    <div class="imagebody">
-                        <img style="height: 90px;width: 60px;" src="../../../assets/Images/Image 11.png" alt="">
-                    </div>
-                    <div>
-                        <h1>{{book.product_id.bookname}}</h1>
-                        <p>{{book.product_id.author}}</p>
-                        <div style="display: flex;">
-                            <div>
-                                <h2>Rs. {{ book.product_id.discountPrice}}</h2>
-                            </div>
-                            <div class="actualprice">
-                                <p>Rs. {{book.product_id.price}}</p>
-                            </div>
+        <mat-card-content class="cardcontent" *ngFor="let book of wishlist" fxLayout="row" fxLayoutGap="38px">
+            <div>
+                <img class="book" style="height: 90px;width: 60px;" src="../../../assets/Images/Image 11.png" alt="">
+            </div>
+            <div>
+                <div fxLayout.sm="column">
+                    <h1>{{book.product_id.bookname}}</h1>
+                    <p>{{book.product_id.author}}</p>
+                    <div style="display: flex;">
+                        <div>
+                            <h2>Rs. {{ book.product_id.discountPrice}}</h2>
+                        </div>
+                        <div class="actualprice">
+                            <p>Rs. {{book.product_id.price}}</p>
                         </div>
                     </div>
                 </div>
-                <div style="display:flex; justify-content:flex-end; width:100%; padding:0;">
-                    <button class="icon" mat-icon-button (click)="remove(book)">
-                        <img src="../../../assets/Images/delete_outline_black_24dp.svg" />
-                    </button>
-                </div>
             </div>
-
-
-
-        </div>
+            <div fxFlex fxLayoutAlign="end">
+                <button (click)="remove(book)" class="delete" mat-icon-button>
+                    <img style="opacity: 0.5;" src="../../../assets/Images/delete_outline_black_24dp.svg" />
+                </button>
+            </div>
+        </mat-card-content>
     </mat-card>
-</div> -->
+</div>
