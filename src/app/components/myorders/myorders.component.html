@@ -1,4 +1,40 @@
-<div class="container">
+<div class="container" fxLayout.lt-sm="column" fxLayout="column" fxLayoutAlign="center center">
+    <!-- <div fxLayoutAlign="start start">
+        <div>
+            <p class="head0">Home /</p>
+            <p class="head1">Book(01)</p>
+        </div>
+    </div> -->
+
+    <mat-card class="item" class="card" fxLayout.lt-sm="column">
+        <mat-card-header class="cardheader">
+            <mat-card-title class="cardtitle"> My Orders ({{ordersCount}})</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="cardcontent" *ngFor="let book of orders" fxLayout="row" fxLayoutGap="38px">
+            <div>
+                <img class="book" style="height: 90px;width: 60px;" src="../../../assets/Images/Image 11.png" alt="">
+            </div>
+            <div>
+                <div fxLayout.sm="column">
+                    <h1>{{book.product_id.bookname}}</h1>
+                    <p>{{book.product_id.author}}</p>
+                    <div style="display: flex;">
+                        <div>
+                            <h2>Rs. {{ book.product_id.discountPrice}}</h2>
+                        </div>
+                        <div class="actualprice">
+                            <p>Rs. {{book.product_id.price}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+
+
+<!-- <div class="container">
     <div class="navigator">
         <p class="head0">Home /</p>
         <p class="head1">Book(01)</p>
@@ -35,4 +71,4 @@
         </mat-card>
 
     </div>
-</div>
+</div> -->
