@@ -10,7 +10,6 @@ export class BookstoreService {
   token: any;
   constructor(private http: HttpserviceService) {
     this.token = localStorage.getItem('token');
-    console.log(this.token);
   }
 
   getallbooks() {
