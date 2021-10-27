@@ -10,6 +10,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { PlaceprderComponent } from './components/placeprder/placeprder.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { MyordersComponent } from './components/myorders/myorders.component';
+import { AdmingetallbooksComponent } from './components/admingetallbooks/admingetallbooks.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: 'placeorder', component: PlaceprderComponent },
       { path: 'wishlist', component: WishlistComponent },
       { path: 'myorders', component: MyordersComponent },
+      { path: 'admin/books', component: AdmingetallbooksComponent },
     ],
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },

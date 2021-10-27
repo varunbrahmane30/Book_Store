@@ -34,6 +34,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatBadgeModule } from '@angular/material/badge';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AdmingetallbooksComponent } from './components/admingetallbooks/admingetallbooks.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PlaceprderComponent,
     WishlistComponent,
     MyordersComponent,
+    AdmingetallbooksComponent,
   ],
   imports: [
     BrowserModule,
