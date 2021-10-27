@@ -3,11 +3,11 @@
         <img src="../../../assets/Images/education.svg" style="margin-right: 5px; margin-left: 100px;">
         <span style="margin-right: 60px;">Bookstore</span>
         <form class="example-form" fxHide.lt-sm style="margin-right: 600px;">
-            <input type="text" class="search-box" placeholder="Search...">
+            <input type="text" class="menubtn" class="search-box" placeholder="Search...">
         </form>
         <button mat-icon-button [matMenuTriggerFor]="menu" class="header-button">
             <img src="../../../assets/Images/person.svg">
-            <div style="color: white">Profile</div>
+            <div class="menubtn" style="color: white">Profile</div>
             <mat-menu class="menuitem" #menu="matMenu">
                 <h3>Welcome</h3>
                 <p>To acsess account and manage orders</p>
@@ -20,14 +20,14 @@
             </mat-menu>
         </button>
         <button (click)="cartbtn()" mat-icon-button matBadge="8" matBadgeColor="accent" class="header-button">
-            <img matBadge="8" src="../../../assets/Images/shopping_cart.svg">
-            <div matBadge="7" style="color: white">Cart</div>
+            <img src="../../../assets/Images/shopping_cart.svg">
+            <div class="menubtn" style="color: white">Cart</div>
         </button>
 
     </mat-toolbar>
     <router-outlet></router-outlet>
     <div class="footer" fxLayoutAlign="center end" fxLayoutAlign.lt.sm="end end">
-        <p class="footercontent" fxLayoutAlign="center">Copyright © 2020, Bookstore Private
+        <p class="footercontent" fxLayoutAlign="center">Copyright © 2021, Bookstore Private
             Limited. All Rights Reserved</p>
     </div>
 </div>
