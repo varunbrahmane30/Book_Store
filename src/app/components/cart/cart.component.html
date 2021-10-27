@@ -1,68 +1,57 @@
-<div class="cantainer">
+<div class="cantainer" style="width: 100%;">
     <div class="navigator">
         <p class="head0">Home /</p>
-        <p class="head1">Book(01)</p>
+        <p class="head1" (click)="gotobook()">Book(01)</p>
     </div>
     <div class="card">
-        <div class="headerprop" fxLayoutAlign="row">
-            <mat-card class="item" class="card">
+        <!-- <div class="headerprop" fxLayoutAlign="row"> -->
+        <mat-card class="item" class="card">
+            <h1 style="padding-bottom:20px;">
+                My cart({{cartItemsCount}})
+            </h1>
 
-                <h1 fxLayoutAlign="start start" style="padding-bottom:20px ;">
-                    My cart({{cartItemsCount}})
-                </h1>
-
-
-                <!-- 
-                <div style="display:flex; justify-content:flex-end; width:100%; padding:0;">
-                    <input type="submit" class="addadress" name="Location" value="Location">
-                </div> -->
-
-                <div *ngFor="let book of cartitems">
-                    <div class="header">
-                        <div class="imagebody">
-                            <img style="height: 100px;width: 70px;" src="../../../assets/Images/Image 11.png" alt="">
-                        </div>
-                        <div>
-                            <h2>{{book.product_id.bookName}}</h2>
-                            <p>{{book.product_id.author}}</p>
-                            <div style="display: flex;">
-                                <div>
-                                    <h2>Rs. {{ book.product_id.discountPrice * book.quantityToBuy}}</h2>
-                                </div>
-                                <div class="actualprice">
-                                    <p>Rs. {{book.product_id.price * book.quantityToBuy}}</p>
-                                </div>
+            <div *ngFor="let book of cartitems">
+                <div class="header">
+                    <div class="imagebody">
+                        <img style="height: 100px;width: 70px;" src="../../../assets/Images/Image 11.png" alt="">
+                    </div>
+                    <div>
+                        <h2>{{book.product_id.bookName}}</h2>
+                        <p>{{book.product_id.author}}</p>
+                        <div style="display: flex;">
+                            <div>
+                                <h2>Rs. {{ book.product_id.discountPrice * book.quantityToBuy}}</h2>
                             </div>
-                            <div style="display: flex;" fxLayout.lt-sm="column">
-                                <div>
-                                    <button class="btn" mat-icon-button [disabled]="book.quantityToBuy<1"
-                                        (click)="countdecrease(book)"><img class="plusminus"
-                                            src="../../../assets/Images/remove_black_24dp.svg" alt=""></button>
-                                </div>
-                                <div>
-                                    <p class="count" style="width: 12px;">{{book.quantityToBuy}}</p>
-                                </div>
-                                <div>
-                                    <button class="btn" mat-icon-button (click)="countincrease(book)"><img
-                                            class="plusminus" src="../../../assets/Images/add_black_24dp.svg"
-                                            alt=""></button>
-                                </div>
-                                <div>
-                                    <button mat-button class="remove" (click)="removecartitem(book)">Remove</button>
-                                </div>
+                            <div class="actualprice">
+                                <p>Rs. {{book.product_id.price * book.quantityToBuy}}</p>
                             </div>
                         </div>
-
-
-
+                        <div style="display: flex;" fxLayout.lt-sm="column">
+                            <div>
+                                <button class="btn" mat-icon-button [disabled]="book.quantityToBuy<1"
+                                    (click)="countdecrease(book)"><img class="plusminus"
+                                        src="../../../assets/Images/remove_black_24dp.svg" alt=""></button>
+                            </div>
+                            <div>
+                                <p class="count" style="width: 12px;">{{book.quantityToBuy}}</p>
+                            </div>
+                            <div>
+                                <button class="btn" mat-icon-button (click)="countincrease(book)"><img class="plusminus"
+                                        src="../../../assets/Images/add_black_24dp.svg" alt=""></button>
+                            </div>
+                            <div>
+                                <button mat-button class="remove" (click)="removecartitem(book)">Remove</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div style="display:flex; justify-content:flex-end; width:100%; padding:0;">
-                    <input type="submit" (click)="checkout()" class="cont" name="Order Place" value="Order Place">
-                </div>
-            </mat-card>
+            </div>
+            <div style="display:flex; justify-content:flex-end; width:100%; padding:0;">
+                <input type="submit" (click)="checkout()" class="cont" name="Order Place" value="Order Place">
+            </div>
+        </mat-card>
 
-        </div>
+        <!-- </div> -->
         <div>
             <div class="prop">
                 <mat-expansion-panel class="card" hideToggle>

@@ -53,6 +53,9 @@ export class CartComponent implements OnInit {
     console.log(this.edituser.value);
   }
 
+  gotobook() {
+    this.router.navigateByUrl('home/books');
+  }
   getCartItems() {
     this.cartservice.getCartItems().subscribe(
       (res: any) => {
