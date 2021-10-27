@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { AdminService } from 'src/app/service/adminservice/admin.service';
 import { UserserviceService } from 'src/app/service/userservice/userservice.service';
 
 @Component({
@@ -9,104 +16,126 @@ import { UserserviceService } from 'src/app/service/userservice/userservice.serv
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  login: boolean = true;
-  loginForm: any = FormGroup;
-  signupForm: any = FormGroup;
+  loginformdata: any;
+  signupformdata: any;
+  hidden = false;
+  token: any;
+
   constructor(
-    private formBuilder: FormBuilder,
-    private userService: UserserviceService,
+    private userservice: UserserviceService,
+    private adminservice: AdminService,
+    private snackbar: MatSnackBar,
     private route: Router
   ) {}
 
-  ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
+  ngOnInit(): void {
+    this.loginformdata = new FormGroup({
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+      selectedvalue: new FormControl('', [Validators.required]),
     });
 
-    this.signupForm = this.formBuilder.group({
-      fullname: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required],
-      mobileno: ['', Validators.required],
+    this.signupformdata = new FormGroup({
+      fullname: new FormControl('', [Validators.required]),
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+      mobilenumber: new FormControl('', Validators.required),
+      selectedvalue: new FormControl('', Validators.required),
     });
   }
 
-  get f() {
-    return this.loginForm.controls;
-  }
-  get g() {
-    return this.signupForm.controls;
+  OnSubmitSignup() {
+    let payload = {
+      fullName: this.signupformdata.value.fullname,
+      email: this.signupformdata.value.username,
+      password: this.signupformdata.value.password,
+      phone: this.signupformdata.value.mobilenumber,
+    };
+
+    console.log(payload);
+
+    if (!this.signupformdata.invalid) {
+      if (this.signupformdata.value.selectedvalue == 'User') {
+        this.userservice.registerservice(payload).subscribe(
+          (response: any) => {
+            console.log(response);
+            this.snackbar.open(response.message, ' ', {
+              duration: 1500,
+            });
+          },
+          (error) => {
+            console.log(error);
+            this.snackbar.open(error.error.message, 'close', {
+              duration: 1500,
+            });
+          }
+        );
+      } else if (this.signupformdata.value.selectedvalue == 'Admin') {
+        this.adminservice.adminRegistrationService(payload).subscribe(
+          (response: any) => {
+            console.log(response),
+              this.snackbar.open('Admin Registration successfull', ' ', {
+                duration: 1500,
+              });
+          },
+          (error) => {
+            console.log(error);
+            this.snackbar.open(error.error.message, 'close', {
+              duration: 1500,
+            });
+          }
+        );
+      }
+    }
   }
 
   onSubmit() {
-    console.log(this.signupForm.value);
-    if (this.signupForm.invalid) {
-      return;
-    } else {
-      let reqPayload = {
-        fullName: this.signupForm.value.fullname,
-        email: this.signupForm.value.email,
-        password: this.signupForm.value.password,
-        mobileno: this.signupForm.value.mobileno,
-      };
-
-      console.log(this.signupForm.value);
-
-      this.userService.registerservice(reqPayload).subscribe(
-        (res) => {
-          console.log(res);
-          //   this.showSnackbar(res);
-        },
-        (err: any) => {
-          console.log(err);
-        }
-      );
-    }
-  }
-
-  onSubmitform() {
-    console.log(this.loginForm.value);
-    if (this.loginForm.invalid) {
-      return;
-    } else {
-      let reqPayload = {
-        email: this.loginForm.value.email,
-        password: this.loginForm.value.password,
-      };
-
-      console.log(this.loginForm.value);
-
-      this.userService.loginservice(reqPayload).subscribe(
-        (response: any) => {
-          console.log(response),
-            localStorage.setItem('token', response.result.accessToken),
-            // this.snackbar.open(response.message, "close", {
-            // duration: 1500,
-
+    let payload = {
+      email: this.loginformdata.value.username,
+      password: this.loginformdata.value.password,
+    };
+    console.log(payload);
+    if (!this.loginformdata.invalid) {
+      if (this.loginformdata.value.selectedvalue == 'User') {
+        this.userservice.loginservice(payload).subscribe(
+          (response: any) => {
+            console.log(response);
+            this.snackbar.open(response.message, 'close', {
+              duration: 1500,
+            });
+            localStorage.setItem('token', response.result.accessToken);
             this.route.navigateByUrl('/home/books');
-        },
-        (error: any) => {
-          console.log(error);
-          // this.snackbar.open(error.error.message, "close", {
-          //   duration: 1500,
-        }
-      );
+          },
+          (error: any) => {
+            console.log(error);
+            this.snackbar.open(error.error.message, 'close', {
+              duration: 1500,
+            });
+          }
+        );
+      } else if (this.loginformdata.value.selectedvalue == 'Admin') {
+        this.adminservice.adminLoginService(payload).subscribe(
+          (response: any) => {
+            console.log('admin response', response);
+            this.snackbar.open(response.message, 'close', {
+              duration: 1500,
+            });
+            localStorage.setItem('token', response.result.accessToken);
+            console.log(this.token);
+            // this.route.navigateByUrl('/home/admin/books');
+          },
+          (error: any) => {
+            console.log(error);
+            this.snackbar.open(error.error.message, 'close', {
+              duration: 1500,
+            });
+          }
+        );
+      }
     }
   }
-  // this.userService.loginUserService(reqPayload).subscribe(
-  //   (res) => {
-  //     console.log(res);
-  //     //   this.showSnackbar(res);
-  //   },
-  //   (err: any) => {
-  //     console.log(err);
-  //   }
-  // );
-  //   }
-  // }
 
-  toggleLogin(login: boolean) {
-    this.login = login;
+  hide() {
+    this.hidden = !this.hidden;
   }
 }

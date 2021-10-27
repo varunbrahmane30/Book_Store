@@ -1,6 +1,118 @@
-<div class="body">
-    <!-- <mat-grid-list cols="2">
-        <mat-grid-tile> -->
+<div class="container" fxLayout="column" fxLayoutAlign="center stretch">
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <div fxHide.lt-sm>
+            <mat-card class="imagecard">
+                <img src="../../../assets/Images/2766594.png" class="image">
+                <div>
+                    <h1 class="title"> ONLINE BOOK SHOPPING</h1>
+                </div>
+            </mat-card>
+        </div>
+        <mat-card class="formcard" [ngStyle.gt-xs]="{'margin-left.px':-300}">
+            <mat-tab-group mat-align-tabs="center">
+                <mat-tab label="LOGIN">
+
+                    <form [formGroup]="loginformdata" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="20px"
+                        class="containerlogin" (ngSubmit)="onSubmit()">
+
+                        <mat-form-field appearance="outline" class="email">
+                            <mat-label>Email Id</mat-label>
+                            <mat-error>Enter Email or Phone</mat-error>
+                            <input matInput formControlName="username" required>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="email">
+                            <mat-label>Password</mat-label>
+                            <mat-error>Enter password</mat-error>
+                            <input [type]="hidden?'text':'password'" matInput formControlName="password" required>
+                            <mat-hint align="end" class="forgotpassword"><button class="forgotbtn" mat-button>Forgot
+                                    Password?</button>
+                            </mat-hint>
+                            <button class="visibility" mat-icon-button matSuffix>
+                                <img (click)="hide()" style="opacity: 0.5;"
+                                    src="../../../assets/Images/visibility_black_24dp.svg">
+                            </button>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="email">
+                            <mat-label>User type</mat-label>
+                            <mat-select formControlName="selectedvalue" required>
+                                <mat-option value="User">User</mat-option>
+                                <mat-option value="Admin">Admin</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+
+                        <button mat-flat-button type="submit" style="color: antiquewhite;" (click)="onSubmit()"
+                            class="loginbutton">{{loginformdata.value.selectedvalue}}
+                            Login</button>
+
+                        <div fxLayout="row" fxLayoutAlign="space-evenly center">
+                            <div style="width: 60px; opacity: 0.5;">
+                                <hr>
+                            </div>
+                            <div style="font-weight: 500; font-size: 14px;">
+                                OR
+                            </div>
+                            <div style="width: 60px; opacity: 0.5;">
+                                <hr>
+                            </div>
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="space-around start" fxLayoutGap="7px">
+                            <button mat-flat-button color="primary" style="color: antiquewhite;"
+                                class="facebook">Facebook</button>
+                            <button mat-stroked-button class="google">Google</button>
+                        </div>
+                    </form>
+                </mat-tab>
+                <mat-tab label="SIGNUP">
+                    <form [formGroup]="signupformdata" (ngSubmit)="OnSubmitSignup()" fxLayout="column"
+                        fxLayoutAlign="space-around center">
+                        <mat-form-field appearance="outline" class="inputbox" style="margin-top: 15px;">
+                            <mat-label>Full Name</mat-label>
+                            <mat-error>Enter Full Name</mat-error>
+                            <input matInput formControlName="fullname" required>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="inputbox">
+                            <mat-label>Email Id</mat-label>
+                            <mat-error>Enter an E-mail address</mat-error>
+                            <input matInput formControlName="username" required>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="inputbox">
+                            <mat-label>Password</mat-label>
+                            <mat-error>Enter a password</mat-error>
+                            <input [type]="hidden?'text':'password'" matInput formControlName="password" required>
+                            <button class="visibility" mat-icon-button matSuffix (click)="hide()">
+                                <img style="opacity: 0.5;" src="../../../assets/Images/visibility_black_24dp.svg">
+                            </button>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="inputbox">
+                            <mat-label>Mobile Number</mat-label>
+                            <mat-error>Enter a Mobile Number</mat-error>
+                            <input matInput formControlName="mobilenumber" required>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="outline" class="inputbox">
+                            <mat-label>User type</mat-label>
+                            <mat-select formControlName="selectedvalue" required>
+                                <mat-option value="User">User</mat-option>
+                                <mat-option value="Admin">Admin</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <button type="submit" style="color: antiquewhite;" mat-flat-button color="primary"
+                            (click)="OnSubmitSignup()" class="signupbutton">{{signupformdata.value.selectedvalue}}
+                            Signup</button>
+                    </form>
+                </mat-tab>
+            </mat-tab-group>
+
+        </mat-card>
+    </div>
+</div>
+
+
+<!-- <div class="body">
+    <mat-grid-list cols="2">
+        <mat-grid-tile> 
     <div fxHide.lt-sm>
         <mat-card class="imagecard">
             <img src="../../../assets/Images/2766594.png" class="image">
@@ -9,14 +121,14 @@
             </div>
         </mat-card>
     </div>
-    <!-- </mat-grid-tile>
-        <mat-grid-tile> -->
+     </mat-grid-tile>
+        <mat-grid-tile>
     <div fxLayoutAlign.lt-sm="center end">
         <mat-card class="login-card" fxLayoutAlign.lt-sm="column" fxLayoutAlign.lt-sm="center end">
             <mat-card-title style="margin-left: 20px; margin-top: 20px; flex: 1 1 auto;">
                 <span (click)="toggleLogin(true)">Login
-                    <!-- <div style="height: 5px; width: 10px; background-color: #a03037;">
-                </div> -->
+                     <div style="height: 5px; width: 10px; background-color: #a03037;">
+                </div>
                 </span>
                 <span (click)="toggleLogin(false)" style="float: right; padding-right: 15px;">Signup</span>
             </mat-card-title>
@@ -75,7 +187,7 @@
             </ng-template>
         </mat-card>
     </div>
-    <!-- </mat-grid-tile>
-    </mat-grid-list> -->
+     </mat-grid-tile>
+    </mat-grid-list>
 
-</div>
+</div> -->
