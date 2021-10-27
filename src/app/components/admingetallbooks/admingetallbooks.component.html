@@ -1,0 +1,36 @@
+<div class="container" fxLayout="column" fxLayoutAlign="center center">
+    <div fxLayout="column" fxLayoutAlign="center start">
+        <div fxFill fxLayout="row">
+            <div class="bookdisplay">
+                <h1 style="display: inline;">Books </h1>
+                <p style="display: inline; color: grey;">({{bookscount}} items)</p>
+            </div>
+            <div fxFlex fxLayoutAlign="end start">
+                <button class="buttons" mat-raised-button color="primary">Add new book</button>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <th class="tablehead">Sr.No.</th>
+                <th class="tablehead">Book Name</th>
+                <th class="tablehead">Author</th>
+                <th class="tablehead">Description</th>
+                <th class="tablehead">Actual price</th>
+                <th class="tablehead" class="discountprice">Discount price</th>
+                <th class="tablehead">Net price</th>
+                <th class="tablehead">Quantity</th>
+            </thead>
+            <tr *ngFor="let book of books; let i = index;">
+                <td class="bookname">{{i+1}}</td>
+                <td class="bookname">{{book.bookName}}</td>
+                <td class="author">{{book.author}}</td>
+                <td class="description">{{book.description}}</td>
+                <td class="actualprice">{{book.price}}</td>
+                <td class="actualprice">{{book.discountPrice}}</td>
+                <td class="actualprice">{{book.price-book.discountPrice}}</td>
+                <td class="actualprice">{{book.quantity}}</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
