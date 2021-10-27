@@ -33,6 +33,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatBadgeModule } from '@angular/material/badge';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     NgxPaginationModule,
     MatPaginatorModule,
     FlexLayoutModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
