@@ -122,7 +122,7 @@ export class LoginComponent implements OnInit {
             });
             localStorage.setItem('token', response.result.accessToken);
             console.log(this.token);
-            // this.route.navigateByUrl('/home/admin/books');
+            this.route.navigateByUrl('/home/admin/books');
           },
           (error: any) => {
             console.log(error);
