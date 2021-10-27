@@ -3,14 +3,15 @@
 }
 
 .book {
-  width: 282px;
-  height: 364px;
+  width: 350px;
+  height: 400px;
   background: transparent 0% 0% no-repeat padding-box;
   opacity: 1;
   padding: 40px 35px;
   border: 1px solid #d1d1d1;
   border-radius: 2px;
   opacity: 1;
+  margin-bottom: 30px;
 }
 
 .addtobagbutton {
@@ -54,11 +55,12 @@
   border-radius: 1px;
   opacity: 1;
   padding: 3px 8px;
-  width: 40px;
+  width: 60px;
+  height: 25px;
 }
 
 .rating {
-  width: 20px;
+  width: 30px;
   height: 19px;
   font: normal normal bold 14px/19px Roboto;
   letter-spacing: 0px;
@@ -135,7 +137,7 @@ ul.list {
 }
 
 .ratinghead {
-  height: 16px;
+  height: px;
   text-align: left;
   font: normal normal normal 12px/16px Roboto;
   letter-spacing: 0px;
@@ -185,6 +187,9 @@ ul.list {
   padding-left: 40px;
 }
 
+.starrate {
+  color: yellow;
+}
 .image {
   height: 100px;
   width: 100px;
@@ -215,4 +220,38 @@ ul.list {
   width: 64px;
   padding: 0;
   opacity: 1;
+}
+
+.paragraph {
+  max-width: fit-content;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.personlogo {
+  max-width: 35px;
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+// .para {
+//   top: 782px;
+//   left: 663px;
+//   text-align: left;
+//   font: normal normal normal 12px/16px Roboto;
+//   letter-spacing: 0px;
+//   color: #707070;
+//   opacity: 1;
+// }
+
+.personimage {
+  top: 728px;
+  left: 635px;
+  width: 20px;
+  height: 20px;
+  text-align: left;
+  font: normal normal normal 11px/15px Roboto;
+  letter-spacing: 0px;
+  color: #707070;
+  opacity: 0.55;
 }

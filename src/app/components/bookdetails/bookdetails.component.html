@@ -30,7 +30,7 @@
             <p class="bookname">{{data.bookName}}</p>
             <p class="author">by {{data.author}}</p>
             <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="5px">
-                <div class="ratingbox">
+                <div class="ratingbox" fxLayoutAlign="row">
                     <p class="rating">4.5</p>
                     <img class="star" src="../../../assets/Images/star_outline_black_24dp.svg" alt="">
                 </div>
@@ -49,19 +49,36 @@
             <hr>
             <p class="feedbackhead">Customer Feedback</p>
             <div class="reviewbox" fxLayout="column">
-                <p class="ratinghead">Overall rating</p>
-                <div fxLayout="row">
-                    <img class="star" src="../../../assets/Images/star_outline_black_24dp.svg" alt="">
-                    <img class="star" src="../../../assets/Images/star_outline_black_24dp.svg" alt="">
-                    <img class="star" src="../../../assets/Images/star_outline_black_24dp.svg" alt="">
-                    <img class="star" src="../../../assets/Images/star_outline_black_24dp.svg" alt="">
-                    <img class="star" src="../../../assets/Images/star_outline_black_24dp.svg" alt="">
+                <form [formGroup]="feedbackform" (ngSubmit)="onSubmit()">
+                    <p class="ratinghead">Overall rating</p>
+                    <div fxLayout="row">
+                        <ngb-rating class="starrate" [max]='5' [(rate)]="currentRate" [readonly]="false"
+                            formControlName="rating">
+                        </ngb-rating>
+                    </div>
+                    <textarea placeholder="write your review" formControlName="comment" class="searchinput"
+                        [ngStyle.lt-md]="{'width.VW': 90}"></textarea>
+                    <button class="reviewsubmit" color="primary">
+                        <p class="submitbotton" (click)="onSubmit()">Submit</p>
+                    </button>
+                </form>
+            </div>
+            <div *ngFor="let data of feedback">
+
+                <div fxFlex class="personlogo">
+                    <img class="personimage" src="../../../assets/Images/account_circle_black_24dp.svg" alt="">
                 </div>
-                <textarea placeholder="write your review" class="searchinput"
-                    [ngStyle.lt-md]="{'width.VW': 90}"></textarea>
-                <button class="reviewsubmit" color="primary">
-                    <p class="submitbotton">Submit</p>
-                </button>
+                <div class="paragraph">
+                    <div>
+                        <h4>{{data.user_id.fullName}}</h4>
+                    </div>
+                    <div>
+                        <ngb-rating [max]='5' [(rate)]="data.rating" [readonly]="true"></ngb-rating>
+                    </div>
+                    <div>
+                        <p class="para">{{data.comment}}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
