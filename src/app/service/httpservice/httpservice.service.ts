@@ -50,7 +50,12 @@ export class HttpserviceService {
     return this.httpClient.delete(url, { headers });
   }
 
-  deleteService(URL: string, token: boolean = false, header: any = null) {
-    return this.httpClient.delete(URL, token && header);
+  deleteService(
+    url: string,
+    payload: any,
+    token: boolean = false,
+    header: any = null
+  ) {
+    return this.httpClient.delete(url, token && header);
   }
 }
