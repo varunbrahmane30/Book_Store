@@ -52,14 +52,13 @@
                 <form [formGroup]="feedbackform" (ngSubmit)="onSubmit()">
                     <p class="ratinghead">Overall rating</p>
                     <div fxLayout="row">
-                        <ngb-rating class="starrate" [max]='5' [(rate)]="currentRate" [readonly]="false"
-                            formControlName="rating">
+                        <ngb-rating [max]='5' [(rate)]="currentRate" [readonly]="false" formControlName="rating">
                         </ngb-rating>
                     </div>
                     <textarea placeholder="write your review" formControlName="comment" class="searchinput"
                         [ngStyle.lt-md]="{'width.VW': 90}"></textarea>
                     <button class="reviewsubmit" color="primary">
-                        <p class="submitbotton" (click)="onSubmit()">Submit</p>
+                        <p class="submitbotton">Submit</p>
                     </button>
                 </form>
             </div>
@@ -73,7 +72,8 @@
                         <h4>{{data.user_id.fullName}}</h4>
                     </div>
                     <div>
-                        <ngb-rating [max]='5' [(rate)]="data.rating" [readonly]="true"></ngb-rating>
+                        <ngb-rating [max]='5' [(rate)]="data.rating" [readonly]="true">
+                        </ngb-rating>
                     </div>
                     <div>
                         <p class="para">{{data.comment}}</p>
