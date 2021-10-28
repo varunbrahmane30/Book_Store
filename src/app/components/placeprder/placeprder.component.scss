@@ -1,7 +1,8 @@
 .cantainer {
   display: flex;
+  margin-top: 60px;
   height: 100vh;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   flex-direction: column;
 }
@@ -16,11 +17,12 @@ td,
 th {
   border: 1px solid #dddddd;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
 }
 
 th {
   background-color: #dddddd;
+  border: 1 px solid gray;
 }
 
 .cont {
@@ -39,5 +41,10 @@ th {
   border: gray;
 }
 img {
-  margin-left: 390px;
+  margin-left: 190px;
+}
+
+.address {
+  width: 300px;
+  text-align: start;
 }
