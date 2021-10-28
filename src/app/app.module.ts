@@ -34,7 +34,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatBadgeModule } from '@angular/material/badge';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AdmingetallbooksComponent } from './components/admingetallbooks/admingetallbooks.component';
+import { AdminbookdetailsComponent } from './components/adminbookdetails/adminbookdetails.component';
+import { AdminaddnewbookComponent } from './components/adminaddnewbook/adminaddnewbook.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +52,8 @@ import { AdmingetallbooksComponent } from './components/admingetallbooks/adminge
     WishlistComponent,
     MyordersComponent,
     AdmingetallbooksComponent,
+    AdminbookdetailsComponent,
+    AdminaddnewbookComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,7 +78,9 @@ import { AdmingetallbooksComponent } from './components/admingetallbooks/adminge
     NgxPaginationModule,
     MatPaginatorModule,
     FlexLayoutModule,
+    MatBadgeModule,
     NgbModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
