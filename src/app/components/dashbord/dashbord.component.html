@@ -19,8 +19,9 @@
                 <span (click)="wishlist()"> <img src="../../../assets/Images/shopping_cart.svg">Wishlist</span>
             </mat-menu>
         </button>
-        <button (click)="cartbtn()" mat-icon-button matBadge="8" matBadgeColor="accent" class="header-button">
-            <img src="../../../assets/Images/shopping_cart.svg">
+        <button (click)="cartbtn()" mat-icon-button matBadgePosition="below" class="header-button">
+            <img matBadge="8" matBadgePosition="below" matBadgeOverlap="false"
+                src="../../../assets/Images/shopping_cart.svg">
             <div class="menubtn" style="color: white">Cart</div>
         </button>
 
