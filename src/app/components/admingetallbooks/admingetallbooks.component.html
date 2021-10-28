@@ -6,7 +6,7 @@
                 <p style="display: inline; color: grey;">({{bookscount}} items)</p>
             </div>
             <div fxFlex fxLayoutAlign="end start">
-                <button class="buttons" mat-raised-button color="primary">Add new book</button>
+                <button class="buttons" (click)="newbook()" mat-raised-button color="primary">Add new book</button>
             </div>
         </div>
         <table class="table">
@@ -20,7 +20,7 @@
                 <th class="tablehead">Net price</th>
                 <th class="tablehead">Quantity</th>
             </thead>
-            <tr *ngFor="let book of books; let i = index;">
+            <tr *ngFor="let book of books; let i = index;" (click)="openDialog(book)">
                 <td class="bookname">{{i+1}}</td>
                 <td class="bookname">{{book.bookName}}</td>
                 <td class="author">{{book.author}}</td>
