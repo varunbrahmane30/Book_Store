@@ -19,6 +19,12 @@ export class CartComponent implements OnInit {
   addtobaghide: boolean = true;
   counthide: boolean = false;
 
+  formdata: any;
+
+  alladdress: any;
+  addressType: any;
+  selectedaddress: any;
+
   constructor(
     private formBuilder: FormBuilder,
     private bookservice: BookstoreService,
