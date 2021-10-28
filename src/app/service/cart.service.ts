@@ -50,8 +50,10 @@ export class CartService {
         'Content-Type': 'application/json',
       }),
     };
+
     return this.http.deleteService(
       this.BACKEND_BASE_URL + '/bookstore_user/remove_cart_item/' + productID,
+      null,
       true,
       header
     );
