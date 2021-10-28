@@ -54,6 +54,7 @@ export class WishlistService {
       this.BACKEND_BASE_URL +
         '/bookstore_user/remove_wishlist_item/' +
         productID,
+      null,
       true,
       header
     );
